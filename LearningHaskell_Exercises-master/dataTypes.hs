@@ -71,4 +71,9 @@ upTo n = n + upTo(n - 1)
 -- isRange :: (Integer, Integer) -> Bool
 
 -- getting the 1st and 2nd items in an array/list
-f (x: (y : _)) = (x,y)
+-- To keep on nesting you'll need to keep on nesting
+f (x: (y : _)) = (x,y) --gets 1st and 2nd item
+g (x: (y : (z: _))) = (x,y,z) --gets 1st, 2nd and 3rd item
+h (x: (y : (z: (a : _)))) = (x,y,z,a) --gets 1st, 2nd, 3rd and 4th item
+
+q (x,y) = x
