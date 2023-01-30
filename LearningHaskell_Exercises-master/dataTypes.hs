@@ -9,7 +9,6 @@ multi = 5 * 5
 -- We'll take in two integers and output a integer
 combine x y = x + y
 
-
 --making a factorial function
 
 fact 0 = 1 -- if statement to state that if 0 is inputted we'll output 1
@@ -62,8 +61,14 @@ upTo n = n + upTo(n - 1)
 --     else x = 5
 
 
-countDown :: Integer -> Integer 
-sum = 0
-countDown 0 = 0
-sum = sum + 1
-countDown n = countDown(n - 1)
+-- countDown :: Integer -> Integer 
+-- sum = 0
+-- countDown 0 = 0
+-- sum = sum + 1
+-- countDown n = countDown(n - 1)
+
+
+-- isRange :: (Integer, Integer) -> Bool
+
+-- getting the 1st and 2nd items in an array/list
+f (x: (y : _)) = (x,y)
