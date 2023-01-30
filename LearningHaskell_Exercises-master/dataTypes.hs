@@ -77,3 +77,9 @@ g (x: (y : (z: _))) = (x,y,z) --gets 1st, 2nd and 3rd item
 h (x: (y : (z: (a : _)))) = (x,y,z,a) --gets 1st, 2nd, 3rd and 4th item
 
 q (x,y) = x
+
+
+--Reordering (Always make case statements/ if statement in numerical order)
+u 0 = "0"
+u 1 = "1"
+u _ = "Random"
