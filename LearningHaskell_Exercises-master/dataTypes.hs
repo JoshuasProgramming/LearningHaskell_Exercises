@@ -83,3 +83,18 @@ q (x,y) = x
 u 0 = "0"
 u 1 = "1"
 u _ = "Random"
+
+myUnzip :: [(a,b)] -> ([a], [b]) --type signature
+myUnzip [] = ([], []) --(base case)
+myUnzip ((a,b) : rest) = 
+    case myUnzip rest of 
+        (as, bs) -> (a:as, b:bs)
+
+myZip :: [a] -> [b] -> [(a,b)] --type signature
+myZip [] _= [] --no a's (base case)
+myZip _ [] = [] -- no b's (base case)
+myZip (a: as) (b:bs) = (a,b) : myZip as bs --(recursive case)
+
+
+
+
