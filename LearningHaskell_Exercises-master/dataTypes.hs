@@ -95,6 +95,65 @@ myZip [] _= [] --no a's (base case)
 myZip _ [] = [] -- no b's (base case)
 myZip (a: as) (b:bs) = (a,b) : myZip as bs --(recursive case)
 
+------------------------------------------------ASSIGNMENT 1 REVISION----------------------------------------------------------------
+
+--1a) What is the type of the value (1 : [2])? 
+
+--(1:[2]) is an integer array => We'll pattern match/concatenate the left '1' with the right '2' and combine into [1,2]
+
+--1b) Using pattern matching, define a boolean function and3 that computes the conjunction of
+--three boolean inputs. Include a type signature 
+--e.g: and3 False False False
+
+and3 :: Bool -> Bool -> Bool -> Bool
+and3 False False False = False
+and3 False False True = False
+and3 False True False = False
+and3 False True True = False
+and3 True False False = False
+and3 True False True = False
+and3 True True False = False
+and3 True True True = True
 
 
+--1c) Give two definitions q1example1 and q1example2 which fully apply and3 with some
+--example inputs to demonstrate its behavior.
+
+q1example1 = and3 False True True
+q2example2 = and3 True True True
+
+--2a) Define a function isRange :: (Integer, Integer) -> Bool that matches on a pair and
+--returns True if the first element of the pair is less than or equal to the second.
+--e.g: isRange(5,10) 
+isRange :: (Integer, Integer) -> Bool
+
+isRange (x,y) | x <= y = True
+isRange (x,y) | x > y = False
+
+
+--2b) Define a function fromRange :: (Integer, Integer) -> [Integer] which takes a
+--valid range and creates a list of integers starting from the first component of the pair and
+--ending at the second component of the pair, e.g.., fromRange (2,5) returns [2,3,4,5].
+--If the range is not valid, return the empty list.
+
+fromRange :: (Integer, Integer) -> [Integer]
+fromRange (start, end)
+  | start > end = [] --base case | if start is greater than end, output nothing
+  | otherwise = [start..end] -- case | if start is less than end, output from start to end
+
+--2c)Give a top-level definition q2example demonstrating your function.
+q2example = fromRange (2,5)
+
+--3) Define a polymorphic function of type:
+--everyOther :: [a] -> Bool -> [a]
+--which outputs a list based on the elements of the input list where if the second parameter is True
+--then only elements at even positions are included and if the second parameter is False then only
+--elements at odd positions are included (where we count positions starting at 0, i.e., the head of
+--a list is position 0).
+--For example, everyOther [1,2,3,4,5] True = [1,3,5] and everyOther [’a’,’b’,’c’,’d’]
+--False = [’b’, ’d’] 
+
+-- everyOther :: [a] -> Bool -> [a]
+
+everyOther [(x,y,z)] = [x,y,z] !! 0
 
