@@ -191,10 +191,22 @@ myFoldr c n (x:xs) = c x (myFoldr c n xs)
 --data Bool R | G | B
 
 --Making your own data type
-data Colors = R | G | B
+data Colors = R | G | B | RGB Integer Integer Integer
 
 toHex :: Colors -> String
 
 toHex R = "#f00"
 toHex G = "#0f0"
 toHex B = "#00f"
+
+toHex (RGB r g b) = "#" ++ convert r ++ convert g ++ convert b
+convert :: Integer -> String
+convert 0 = "00"
+convert 255 = "ff"
+convert _ = undefined 
+
+---continue the 'convert function
+
+
+listA :: [a] -> a
+listA = a
