@@ -159,11 +159,18 @@ everyOther [(x,y,z)] = [x,y,z] !! 0
 
 
 
-
-
-
 --------list 
 example :: [(Integer, Bool)]
 example = [ (1, False), (10, True), (3, True), (5, False), (9, True) ]
 
+--exampleA :: [Integer]
+exampleA :: [1,10,3,5,9]
 
+--exampleB :: [Bool]
+exampleB :: [False, True, True, True, True]
+
+---mapping 
+map :: (a -> b) -> [a] -> [b]
+
+--filter
+filter :: (a -> Bool) -> [a] -> [a]   
