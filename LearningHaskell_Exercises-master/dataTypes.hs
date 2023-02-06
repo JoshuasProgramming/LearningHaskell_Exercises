@@ -188,5 +188,13 @@ myFoldr c n [] = n
 myFoldr c n (x:xs) = c x (myFoldr c n xs)
 
 
+--data Bool R | G | B
 
+--Making your own data type
+data Colors = R | G | B
 
+toHex :: Colors -> String
+
+toHex R = "#f00"
+toHex G = "#0f0"
+toHex B = "#00f"
