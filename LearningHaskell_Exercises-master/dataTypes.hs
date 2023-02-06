@@ -162,8 +162,8 @@ everyOther [(x,y,z)] = [x,y,z] !! 0
 
 
 
----list 
+--------list 
 example :: [(Integer, Bool)]
-example = [(1,False),(10,True),(3,True),(5, False),(9, True)]
+example = [ (1, False), (10, True), (3, True), (5, False), (9, True) ]
 
 
