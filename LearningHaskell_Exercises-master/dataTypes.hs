@@ -157,3 +157,13 @@ q2example = fromRange (2,5)
 
 everyOther [(x,y,z)] = [x,y,z] !! 0
 
+
+
+
+
+
+---list 
+example :: [(Integer, Bool)]
+example = [(1,False),(10,True),(3,True),(5, False),(9, True)]
+
+
