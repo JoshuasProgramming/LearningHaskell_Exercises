@@ -164,13 +164,29 @@ example :: [(Integer, Bool)]
 example = [ (1, False), (10, True), (3, True), (5, False), (9, True) ]
 
 --exampleA :: [Integer]
-exampleA :: [1,10,3,5,9]
+exampleA = [1,10,3,5,9]
 
 --exampleB :: [Bool]
-exampleB :: [False, True, True, True, True]
+exampleB = [False, True, True, True, True]
 
 ---mapping 
-map :: (a -> b) -> [a] -> [b]
+-- map :: (a -> b) -> [a] -> [b]
 
 --filter
-filter :: (a -> Bool) -> [a] -> [a]   
+-- filter :: (a -> Bool) -> [a] -> [a]   
+
+-- \x means to create a function
+--e.g: map (\x -> x + 1) [1,2,3,4,5]
+    -- is the same as: 
+    -- [1,2,3,4,5].map((num){
+    --num = num + 1
+    --})
+-- => [2,3,4,5,6]
+
+myFoldr :: (a -> b -> b) -> b -> [a] -> b
+myFoldr c n [] = n
+myFoldr c n (x:xs) = c x (myFoldr c n xs)
+
+
+
+
