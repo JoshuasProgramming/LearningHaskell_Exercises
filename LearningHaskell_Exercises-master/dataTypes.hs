@@ -155,8 +155,12 @@ q2example = fromRange (2,5)
 
 -- everyOther :: [a] -> Bool -> [a]
 
-everyOther [(x,y,z)] = [x,y,z] !! 0
-
+everyOther :: [a] -> Bool -> [a]
+everyOther []          _  = []
+everyOther [x]      True  = [x]
+everyOther [x]      False = []
+everyOther (x:_:xs) True  = x : everyOther xs True
+everyOther (_:y:xs) False = y : everyOther xs False
 
 
 --------list 
@@ -207,6 +211,14 @@ convert _ = undefined
 
 ---continue the 'convert function
 
+--1a) What is the type of the value (1 : [2])?
+-- => Integer array
 
-listA :: [a] -> a
-listA = a
+--1b) Give another value of this type. 
+-- => (1:3:5:[7,9,11])
+result_arr = (1:3:5:[7,9,11])
+
+--2a) With reference to the next question, give a suitable representation of the following data in
+--Haskell as a definition called q2example
+
+q2example = [ (1, False), (10, True), (3, True), (5, False), (9, True) ]
