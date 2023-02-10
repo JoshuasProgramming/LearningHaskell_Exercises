@@ -221,4 +221,33 @@ result_arr = (1:3:5:[7,9,11])
 --2a) With reference to the next question, give a suitable representation of the following data in
 --Haskell as a definition called q2example
 
-q2example = [ (1, False), (10, True), (3, True), (5, False), (9, True) ]
+-- q2example = [ (1, False), (10, True), (3, True), (5, False), (9, True) ]
+
+--
+
+-- bottomLine :: Tree Integer -> Integer
+-- bottomLine Empty = 0
+-- bottomLine (Node value Empty Empty) = 0
+-- bottomLine (Node value left Empty) 
+--    | value < maximum left = sum left 
+--    | overwise = 0
+
+-- bottomLine (Node value Empty right)
+--    | value < maximum right = sum right 
+--    | overwise = 0
+-- bottomLine (Node value left right) = 
+--    let l = bottomLine left
+--        r = bottomLine right
+--    in if value < maximum left || value < maximum right then l + r else 0
+
+-- sum :: Tree Integer -> Integer
+-- sum Empty = 0
+-- sum (Node value left right) = value + sum left + sum right
+
+q2example9 = [ (1, [2,5]), (10,[11,6]), (4,[7,3])]
+
+data Tree a = Empty | Node (Tree a) a (Tree a)
+
+rotate :: Tree a -> a
+rotate _ = _
+rotate (Node left value right) = Node (rotate right) value (rotate left)
